@@ -114,6 +114,8 @@ bool threadBegin(void)
   }
 
   logPrintf("       Free Heap : %d bytes / %d bytes\n", xPortGetFreeHeapSize(), configTOTAL_HEAP_SIZE);
+  logPrintf("       Free BSS  : %d bytes\n", bspGetFreeBSS());
+
   unLock();
 
   is_begin = true;
@@ -163,6 +165,7 @@ void cliThread(cli_args_t *args)
     vPortFree(list_buf);
 
     cliPrintf("Free Heap : %d bytes\n", xPortGetFreeHeapSize());
+    cliPrintf("Free BSS  : %d bytes\n", bspGetFreeBSS());
     ret = true;
   }
 

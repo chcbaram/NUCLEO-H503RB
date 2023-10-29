@@ -54,7 +54,19 @@ uint32_t millis(void)
   return HAL_GetTick();
 }
 
+uint32_t bspGetFreeBSS(void)
+{
+  extern uint32_t _estack;
+  extern uint32_t _Min_Heap_Size;
+  extern uint32_t _end;
 
+  uint32_t free_bss;
+
+  free_bss = (uint32_t)(&_estack - &_end) * 4;
+  free_bss = free_bss - (uint32_t)&_Min_Heap_Size;
+  
+  return free_bss;
+}
 
 void Error_Handler(void)
 {

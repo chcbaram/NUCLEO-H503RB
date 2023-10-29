@@ -21,7 +21,7 @@ void logPrintf(const char *fmt, ...);
 void delay(uint32_t time_ms);
 uint32_t millis(void);
 void Error_Handler(void);
-
+uint32_t bspGetFreeBSS(void);
 
 #ifdef __cplusplus
 }
