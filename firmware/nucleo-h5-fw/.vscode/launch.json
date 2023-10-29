@@ -33,6 +33,9 @@
       ],
       "windows": {
         "gdbPath": "${env:ARM_TOOLCHAIN_DIR}/arm-none-eabi-gdb.exe",
+      },
+      "osx": {
+        "svdFile": "/opt/ST/STM32CubeCLT/STMicroelectronics_CMSIS_SVD/STM32H503.svd"
       }
     },
     {
