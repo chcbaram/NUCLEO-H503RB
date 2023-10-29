@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "bsp.h"
+#include "hw_def.h"
 #include "stm32h5xx_it.h"
 
 
@@ -103,10 +103,11 @@ void UsageFault_Handler(void)
 /**
   * @brief This function handles System service call via SWI instruction.
   */
+#ifndef _USE_HW_RTOS
 void SVC_Handler(void)
 {
-
 }
+#endif
 
 /**
   * @brief This function handles Debug monitor.
@@ -119,16 +120,25 @@ void DebugMon_Handler(void)
 /**
   * @brief This function handles Pendable request for system service.
   */
+#ifndef _USE_HW_RTOS 
 void PendSV_Handler(void)
 {
-
 }
+#endif
 
 /**
   * @brief This function handles System tick timer.
   */
+#ifdef _USE_HW_RTOS
+// extern void osSystickHandler(void);
+
+// void SysTick_Handler(void)
+// {
+//   osSystickHandler();
+// }
+#else 
 void SysTick_Handler(void)
 {
   HAL_IncTick();
 }
-
+#endif

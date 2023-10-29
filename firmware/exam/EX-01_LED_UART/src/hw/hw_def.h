@@ -35,24 +35,4 @@
 
 
 
-typedef enum
-{
-  mGPIO_Spare1 = 0,
-  mGPIO_Spare2    ,
-  mGPIO_Spare3    ,
-  mOut_Watchdog   ,
-  mOut_Reg_On     ,
-  mOut_Sol_13V    ,
-  mOut_Sol_21V    ,
-  mOut_Sol_2WAY1  ,
-  mOut_Sol_2WAY2  ,
-  mOut_Sol_2WAY3  ,
-  mOut_Sol_2WAY4  ,
-  mOut_Sol_3WAY1  ,
-  mOut_Sol_3WAY2  ,
-  GPIO_PIN_MAX
-} GpioPinName_t;
-
-
-
 #endif

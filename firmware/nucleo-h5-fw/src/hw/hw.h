@@ -15,7 +15,7 @@ extern "C" {
 #include "swtimer.h"
 #include "gpio.h"
 #include "qbuffer.h"
-
+#include "osal/thread.h"
 
 
 bool hwInit(void);

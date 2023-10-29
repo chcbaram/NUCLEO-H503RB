@@ -18,6 +18,13 @@ file(GLOB SRC_FILES CONFIGURE_DEPENDS
   src/*.c
   src/bsp/*.c
   src/bsp/device/*.c
+  src/bsp/rtos/*.c
+
+  # FreeRTOS
+  src/lib/FreeRTOS/Source/*.c
+  src/lib/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/*.c
+  src/lib/FreeRTOS/Source/CMSIS_RTOS/*.c    
+  src/lib/FreeRTOS/Source/portable/MemMang/heap_4.c
 )
 
 file(GLOB_RECURSE SRC_FILES_RECURSE CONFIGURE_DEPENDS
@@ -26,7 +33,7 @@ file(GLOB_RECURSE SRC_FILES_RECURSE CONFIGURE_DEPENDS
   src/common/*.c
   src/hw/*.c
 
-  src/lib/STM32H5xx_HAL_Driver/Src/*.c
+  src/lib/ST/STM32H5xx_HAL_Driver/Src/*.c
 )
 
 add_executable(${EXECUTABLE} 
@@ -50,9 +57,13 @@ target_include_directories(${EXECUTABLE} PRIVATE
   src/hw/driver
   src/lib
 
-  src/lib/CMSIS/Include
-  src/lib/CMSIS/Device/ST/STM32H5xx/Include
-  src/lib/STM32H5xx_HAL_Driver/Inc
+  src/lib/ST/CMSIS/Include
+  src/lib/ST/CMSIS/Device/ST/STM32H5xx/Include
+  src/lib/ST/STM32H5xx_HAL_Driver/Inc
+
+  src/lib/FreeRTOS/Source/CMSIS_RTOS
+  src/lib/FreeRTOS/Source/include
+  src/lib/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure
 )
 
 target_compile_definitions(${EXECUTABLE} PRIVATE

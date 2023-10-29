@@ -7,7 +7,7 @@ extern "C" {
 
 #include "def.h"
 
-
+#include "rtos.h"
 #include "stm32h5xx_hal.h"
 
 #define assert   assert_param

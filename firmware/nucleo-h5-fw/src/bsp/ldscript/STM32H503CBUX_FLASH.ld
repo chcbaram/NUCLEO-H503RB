@@ -84,6 +84,12 @@ SECTIONS
     *(.glue_7t)        /* glue thumb to arm code */
     *(.eh_frame)
 
+    _smodule = .;
+    KEEP (*(.module))
+    KEEP (*(.module*))
+    _emodule = .;
+
+
     KEEP (*(.init))
     KEEP (*(.fini))
 

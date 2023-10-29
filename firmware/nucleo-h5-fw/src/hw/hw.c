@@ -19,14 +19,12 @@ volatile const firm_ver_t firm_ver __attribute__((section(".version"))) =
 
 bool hwInit(void)
 {
-  bspInit();
-
   #ifdef _USE_HW_CLI
   cliInit();
   #endif
   logInit();
   ledInit();
-  
+
   uartInit();
   for (int i=0; i<HW_UART_MAX_CH; i++)
   {
@@ -40,5 +38,7 @@ bool hwInit(void)
   logPrintf("Booting..Clock\t\t: %d Mhz\r\n", (int)HAL_RCC_GetSysClockFreq()/1000000);
   logPrintf("\n");
 
+  threadInit();
+  
   return true;
 }

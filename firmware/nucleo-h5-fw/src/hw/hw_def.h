@@ -10,6 +10,8 @@
 #define _DEF_BOARD_NAME           "NUCLEO-H5-FW"
 
 
+#define _USE_HW_RTOS
+
 
 #define _USE_HW_LED
 #define      HW_LED_MAX_CH          1
@@ -31,28 +33,18 @@
 #define      HW_CLI_GUI_WIDTH       80
 #define      HW_CLI_GUI_HEIGHT      24
 
+#define _USE_HW_THREAD
+#define      HW_THREAD_MAX_CNT              8
 
 
 
+#define _HW_DEF_THREAD_MAIN_PRI             osPriorityNormal
+#define _HW_DEF_THREAD_MAIN_STACK           (1*1024)
 
-typedef enum
-{
-  mGPIO_Spare1 = 0,
-  mGPIO_Spare2    ,
-  mGPIO_Spare3    ,
-  mOut_Watchdog   ,
-  mOut_Reg_On     ,
-  mOut_Sol_13V    ,
-  mOut_Sol_21V    ,
-  mOut_Sol_2WAY1  ,
-  mOut_Sol_2WAY2  ,
-  mOut_Sol_2WAY3  ,
-  mOut_Sol_2WAY4  ,
-  mOut_Sol_3WAY1  ,
-  mOut_Sol_3WAY2  ,
-  GPIO_PIN_MAX
-} GpioPinName_t;
+#define _HW_DEF_THREAD_SYSTEM_PRI           osPriorityNormal
+#define _HW_DEF_THREAD_SYSTEM_STACK         (1*1024)
 
-
+#define _HW_DEF_THREAD_CLI_PRI              osPriorityNormal
+#define _HW_DEF_THREAD_CLI_STACK            (2*1024)
 
 #endif
