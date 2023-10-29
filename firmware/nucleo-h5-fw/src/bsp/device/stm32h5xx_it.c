@@ -101,6 +101,14 @@ void UsageFault_Handler(void)
 }
 
 /**
+  * @brief This function handles Debug monitor.
+  */
+void DebugMon_Handler(void)
+{
+
+}
+
+/**
   * @brief This function handles System service call via SWI instruction.
   */
 #ifndef _USE_HW_RTOS
@@ -108,14 +116,6 @@ void SVC_Handler(void)
 {
 }
 #endif
-
-/**
-  * @brief This function handles Debug monitor.
-  */
-void DebugMon_Handler(void)
-{
-
-}
 
 /**
   * @brief This function handles Pendable request for system service.
